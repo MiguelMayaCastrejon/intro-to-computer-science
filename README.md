@@ -1,4 +1,5 @@
 # intro-to-computer-science
+<pre>
 Course Contents  
 1. Fundamentals of Computer Science 
 1.1 Object of study and background 
@@ -50,3 +51,4 @@ Course Contents
 10.2 Execution threads 
 10.3 Creation and use of threads 
 10.4 Operations on threads  
+</pre>
