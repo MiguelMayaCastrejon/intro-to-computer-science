@@ -9,7 +9,7 @@ public class DecimalToDegrees {
     private double seconds;
 
 /**
-	* Hace la conversión de un número decimal a grados, minutos y segundos.
+	* Hace la conversión de grados decimales a grados, minutos y segundos.
 	* @param decimal el numero decimal al que le queremos aplicar la conversión.
 */
     public void convert(double decimal) { 
@@ -19,19 +19,19 @@ public class DecimalToDegrees {
 
     }
 /**
-	* @return la conversion de los grados.
+	* @return la conversion a los grados.
 */
     public int degrees() {
         return degrees;
     }
 /**
-	* @return la conversion de los minutos.
+	* @return la conversion a los minutos.
 */
     public double minutes(){
         return minutes;
     }
 /**
-	* @return la conversion de los segundos.
+	* @return la conversion a los segundos.
 */
     public double seconds(){
         return seconds;

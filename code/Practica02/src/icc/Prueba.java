@@ -9,6 +9,7 @@ package icc;
 */
 
 import icc.conversiones.DecimalToDegrees;
+import icc.conversiones.DegreesToDecimal;
 import java.util.Scanner;
 
 /**
