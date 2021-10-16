@@ -22,7 +22,7 @@ public class DegreesToDecimal {
     /**
 	* @return la conversion a los grados.
     */
-    public double getDecimal(){
+    public double decimal(){
         return decimal;
     }
 

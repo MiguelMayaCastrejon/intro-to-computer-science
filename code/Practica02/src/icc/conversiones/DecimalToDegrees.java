@@ -21,19 +21,19 @@ public class DecimalToDegrees {
 /**
 	* @return la conversion a los grados.
 */
-    public int getDegrees() {
+    public int degrees() {
         return degrees;
     }
 /**
 	* @return la conversion a los minutos.
 */
-    public double getMinutes(){
+    public int minutes(){
         return minutes;
     }
 /**
 	* @return la conversion a los segundos.
 */
-    public double getSeconds(){
+    public double seconds(){
         return seconds;
     }
 }

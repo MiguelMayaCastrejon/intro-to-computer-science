@@ -27,7 +27,7 @@ public class Prueba {
      * @param int - Solo es una bandera de salida.
      */
     public static int decimalToDegrees() {
-        DecimalToDegrees decimalToDegrees = new DecimalToDegrees(); 
+        DecimalToDegrees Dtd = new DecimalToDegrees(); 
         Scanner scn = new Scanner(System.in);
 
         double decimal; 
@@ -38,13 +38,13 @@ public class Prueba {
         System.out.println("Ingresa el valor de los grados decimales:");
         decimal = scn.nextDouble();
 
-        decimalToDegrees.convert(decimal);
+        Dtd.convert(decimal);
 
         System.out.println("La conversion de " + decimal + "° " +
         "grados decimales a grados, minutos y segundos es de: ");
-        System.out.println("Grados: " + decimalToDegrees.getDegrees() + "°");
-        System.out.println("Minutos: " + (int) decimalToDegrees.getMinutes() + "'");
-        System.out.println("Segundos: " + decimalToDegrees.getSeconds() + "''");
+        System.out.println("Grados: " + Dtd.degrees() + "°");
+        System.out.println("Minutos: " + Dtd.minutes() + "'");
+        System.out.println("Segundos: " + Dtd.seconds() + "''");
 
         scn.close(); 
 
@@ -56,16 +56,16 @@ public class Prueba {
      * Metodo que hace la conversión de grados, minutos y segundos 
      * a grados decimales usando la terminal como flujo de datos.
      * 
-     * Ejemplo, input:63° 10' 8.4"  output:63.169°
+     * Ejemplo, input:63 10 8.4  output:63.169°
      *      
      * @param int - Solo es una bandera de salida.
      */
     public static int degreesToDecimal() {
-        DegreesToDecimal degreesToDecimal = new DegreesToDecimal();
+        DegreesToDecimal dtD = new DegreesToDecimal();
         Scanner scn = new Scanner(System.in);
 
         int degrees; 
-        double minutes; 
+        int minutes; 
         double seconds;
 
         System.out.println("Este es un programa para convertir " + 
@@ -75,16 +75,16 @@ public class Prueba {
         degrees = scn.nextInt();
 
         System.out.println("Ingresa el valor de los minutos:");
-        minutes = scn.nextDouble();
+        minutes = scn.nextInt();
 
         System.out.println("Ingresa el valor de los segundos:");
         seconds = scn.nextDouble();
 
-        degreesToDecimal.convert(degrees, minutes, seconds);
+        dtD.convert(degrees, minutes, seconds);
 
         System.out.println("La conversion de " + degrees + "° " + minutes + "' "+
         seconds + "'' a grados decimales es de:");
-        System.out.println("Grados decimales: " + degreesToDecimal.getDecimal() + "°");
+        System.out.println("Grados decimales: " + dtD.decimal() + "°");
 
         scn.close();
 
