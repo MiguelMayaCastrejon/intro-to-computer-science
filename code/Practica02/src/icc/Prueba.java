@@ -21,6 +21,8 @@ public class Prueba {
     /**
      * Metodo que hace la conversión de grados decimales a grados, 
      * minutos y segundos usando la terminal como flujo de datos.
+     * 
+     * Ejemplo, input:63.169 output:63° 10' 8.4"
      *      
      * @param int - Solo es una bandera de salida.
      */
@@ -53,6 +55,8 @@ public class Prueba {
      /**
      * Metodo que hace la conversión de grados, minutos y segundos 
      * a grados decimales usando la terminal como flujo de datos.
+     * 
+     * Ejemplo, input:63° 10' 8.4"  output:63.169°
      *      
      * @param int - Solo es una bandera de salida.
      */
@@ -92,7 +96,7 @@ public class Prueba {
         Scanner scn = new Scanner(System.in);
 
         System.out.println("Escribe 1 si quieres convertir de grados decimales a " + 
-        "grados, minutos y segundos.");
+        "grados, minutos y segundos."); 
         System.out.println("Escribe cualquier otro número si quieres convertir " +  
         "de grados, minutos y segundos a grados decimales.");
 
