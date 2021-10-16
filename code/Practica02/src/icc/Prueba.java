@@ -19,78 +19,89 @@ import java.util.Scanner;
 public class Prueba {
 
     /**
-     * Metodo que convierte metros y centimetros a pies y pulgadas usando la
-     * terminal como flujo de datos.
-     *
+     * Metodo que hace la conversión de grados decimales a grados, 
+     * minutos y segundos usando la terminal como flujo de datos.
+     *      
      * @param int - Solo es una bandera de salida.
      */
-    public static int metersToFeet() {
-        MetersToFeets mF = new MetersToFeets();
+    public static int decimalToDegrees() {
+        DecimalToDegrees decimalToDegrees = new DecimalToDegrees(); 
         Scanner scn = new Scanner(System.in);
 
-        int metros;
-        double centimetros;
+        double decimal; 
 
-        System.out.println("Este es un programa para convertir de metros y centimetros a pies y pulgadas.");
+        System.out.println("Este es un programa para convertir " + 
+        "de grados decimales a grados, minutos y segundos.");
 
-        System.out.println("Ingresa el valor de metros en enteros:");
-        metros = scn.nextInt();
+        System.out.println("Ingresa el valor de los grados decimales:");
+        decimal = scn.nextDouble();
 
-        System.out.println("Ingresa el valor de centimetros (menor a 100):");
-        centimetros = scn.nextDouble();
+        decimalToDegrees.convert(decimal);
 
-        mF.convert(metros, centimetros);
+        System.out.println("La conversion de " + decimal + "° " +
+        "grados decimales a grados, minutos y segundos es de: ");
+        System.out.println("Grados: " + decimalToDegrees.getDegrees() + "°");
+        System.out.println("Minutos: " + (int) decimalToDegrees.getMinutes() + "'");
+        System.out.println("Segundos: " + decimalToDegrees.getSeconds() + "''");
 
-        System.out.print("La conversion de " + metros + " metros ");
-        System.out.print("y " + centimetros + " centimetros a ");
-        System.out.println("pies y pulgadas es de:");
-        System.out.println("Pies: " + mF.feets());
-        System.out.println("Pulgadas: " + mF.inches());
+        scn.close(); 
 
         return 0;
     }
+    
 
-    /**
-     * Metodo que convierte pies y pulgadas a metros y centimetros usando la
-     * terminal como flujo de datos.
-     *
+     /**
+     * Metodo que hace la conversión de grados, minutos y segundos 
+     * a grados decimales usando la terminal como flujo de datos.
+     *      
      * @param int - Solo es una bandera de salida.
      */
-    public static int feetsToMeters() {
-        FeetsToMeters fM = new FeetsToMeters();
+    public static int degreesToDecimal() {
+        DegreesToDecimal degreesToDecimal = new DegreesToDecimal();
         Scanner scn = new Scanner(System.in);
 
-        int pies;
-        double pulgadas;
+        int degrees; 
+        double minutes; 
+        double seconds;
 
-        System.out.println("Este es un programa para convertir de pies y pulgadas a metros y centimetros.");
+        System.out.println("Este es un programa para convertir " + 
+        "de grados, minutos y segundos a grados decimales.");
 
-        System.out.println("Ingresa el valor de pies en enteros:");
-        pies = scn.nextInt();
+        System.out.println("Ingresa el valor de los grados en enteros:");
+        degrees = scn.nextInt();
 
-        System.out.println("Ingresa el valor de pulgadas (menor a 12):");
-        pulgadas = scn.nextDouble();
+        System.out.println("Ingresa el valor de los minutos:");
+        minutes = scn.nextDouble();
 
-        fM.convert(pies, pulgadas);
+        System.out.println("Ingresa el valor de los segundos:");
+        seconds = scn.nextDouble();
 
-        System.out.print("La conversion de " + pies + " pies ");
-        System.out.print("y " + pulgadas + " pulgadas a ");
-        System.out.println("metros y centimetros es de:");
-        System.out.println("Metros: " + fM.meters());
-        System.out.println("Centimetros: " + fM.centimeters());
+        degreesToDecimal.convert(degrees, minutes, seconds);
+
+        System.out.println("La conversion de " + degrees + "° " + minutes + "' "+
+        seconds + "'' a grados decimales es de:");
+        System.out.println("Grados decimales: " + degreesToDecimal.getDecimal() + "°");
+
+        scn.close();
 
         return 0;
     }
 
     public static void main(String args[]) {
-        int opcion;
+        double opcion; //Lo cambie a double por si el usuario no mete enteros.
         Scanner scn = new Scanner(System.in);
 
-        System.out.println("Escribe 1 si quieres convertir de metros y centimetros a pies y pulgadas.");
-        System.out.println("Escribe 2 si quieres lo contrario.");
+        System.out.println("Escribe 1 si quieres convertir de grados decimales a " + 
+        "grados, minutos y segundos.");
+        System.out.println("Escribe cualquier otro número si quieres convertir " +  
+        "de grados, minutos y segundos a grados decimales.");
 
-        opcion = scn.nextInt();
+        opcion = scn.nextDouble();
 
-        opcion = opcion == 1 ? metersToFeet() : feetsToMeters();
+        opcion = opcion == 1 ? decimalToDegrees() : degreesToDecimal();
+
+        scn.close();
     }
+
+
 }
