@@ -1,5 +1,5 @@
 
-package colors;
+package icc.colors;
 
 /**
  * Clase que se encarga de guardar <strong>las cadenas de formato</strong> para la terminal.

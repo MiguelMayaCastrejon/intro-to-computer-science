@@ -8,7 +8,7 @@
 package icc;
 import java.util.Random;
 import java.util.Scanner;
-import colors.Colors;
+import icc.colors.Colors;
 
 
 
