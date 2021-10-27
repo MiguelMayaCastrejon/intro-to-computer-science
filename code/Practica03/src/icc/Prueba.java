@@ -1,9 +1,21 @@
+/**
+* Práctica 3 del curso de Introducción a Ciencias de la Computación.
+* @author Joel Miguel Maya Castrejón 417112602 
+* @version 26/Octubre/2021.
+* @since Laboratorio de Introducción a Ciencias de la Computación 2022-1.
+*/
 
+package icc;
 import java.util.Random;
 import java.util.Scanner;
 import colors.Colors;
 
 
+
+/**
+ * Clase que implementa una aplicacion que juega el usuario por consola el juego de piedra papel o tijera
+ * vs la maquina.
+ */
 public class Prueba {
 
     public static void main(String args[]) {
@@ -22,7 +34,11 @@ public class Prueba {
         Colors.println("Bienvenido a los juegos del calamar participante #" + participante, Colors.HIGH_INTENSITY);;
         System.out.println("Vas a jugar piedra papel o tijera contra la maquina.\nEscribe una de las tres opciones"
         + " y la maquina eligira la otra:");
-        Colors.println("Piedra\nPapel\nTijera", Colors.UNDERLINE);
+        Colors.println("Piedra", Colors.UNDERLINE);
+        Colors.println("Papel", Colors.UNDERLINE);
+        Colors.println("Tijera", Colors.UNDERLINE);
+
+
 
         tiroUsuario = entrada.nextLine();
         tiroUsuario = tiroUsuario.trim();
