@@ -1,6 +1,7 @@
 
 package icc.figuras;
 
+
 import java.text.DecimalFormat;
 
 import icc.colors.Colors;
@@ -14,13 +15,19 @@ import icc.puntos.Punto;
 public class Elipse {
 
     /**
+     * Atributos
+     */
+    private double ejeMayor, ejeMenor;
+
+    /**
      * Constructor que crea un elipse con ambos ejes dados.
      *
      * @param ejeMayor Valor del eje mayor.
      * @param ejeMenor Valor del eje menor.
      */
     public Elipse(double ejeMayor, double ejeMenor) {
-
+        this.ejeMayor = ejeMayor;
+        this.ejeMenor = ejeMenor;
     }
 
     /**
