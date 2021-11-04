@@ -17,7 +17,10 @@ public class Elipse {
     /**
      * Atributos
      */
-    private double ejeMayor, ejeMenor;
+    private double ejeMayor, ejeMenor, perimetro, area;
+    //Obtenemos los radios para operarlos.
+    double ejeMayorRadio = ejeMayor/2;
+    double ejeMenorRadio = ejeMenor/2;
 
     /**
      * Constructor que crea un elipse con ambos ejes dados.
@@ -54,12 +57,7 @@ public class Elipse {
      * @return double Perimetro de este elipse.
      */
     public double perimetro() {
-        //Obtenemos los radios para operarlos.
-        double ejeMayorRadio = ejeMayor/2;
-        double ejeMenorRadio = ejeMenor/2;
-
-        //Hacemos los calculos.
-        double perimetro = Math.PI * (ejeMayorRadio + ejeMenorRadio );
+        perimetro = Math.PI * (ejeMayorRadio + ejeMenorRadio );
         return perimetro;
     }
 
@@ -69,6 +67,8 @@ public class Elipse {
      * @return double Area de este elipse.
      */
     public double area() {
+        area = Math.PI * ejeMayorRadio * ejeMenorRadio;
+        return area;
     }
 
     /**
