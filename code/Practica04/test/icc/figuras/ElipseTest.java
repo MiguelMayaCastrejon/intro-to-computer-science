@@ -189,7 +189,7 @@ public class ElipseTest extends Calificador {
         Punto p;
         double m, M, r;
 
-        startTest("Revisa que puntos en el borde del elipse no esten dentro del elipse.", 1.0);
+        startTest("Revisa que puntos en el elipse no esten dentro del elipse.", 1.0);
 
         M = (rdm.nextDouble() + 1) * Calificador.LARGE_RANGE;
         m = ((rdm.nextDouble() / 3.0) + 0.25) * M;
@@ -314,6 +314,8 @@ public class ElipseTest extends Calificador {
         m = ((rdm.nextDouble() / 3.0) + 0.25) * M;
 
         e = new Elipse(M, m);
+        M /= 2.0;
+        m /= 2.0;
         a = Math.PI * M * m;
         assertTrue(almostEquals(e.area(), a));
         addUp(1.0);

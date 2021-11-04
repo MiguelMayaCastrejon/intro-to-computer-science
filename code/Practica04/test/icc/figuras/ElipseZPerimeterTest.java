@@ -40,6 +40,8 @@ public class ElipseZPerimeterTest extends Calificador {
         m = ((rdm.nextDouble() / 3.0) + 0.25) * M;
 
         e = new Elipse(M, m);
+        M /= 2.0;
+        m /= 2.0;
         p = Math.PI * 3 * (M + m) - Math.PI * Math.sqrt((3 * M + m) * (M + 3 * m));
         assertTrue(almostEquals(e.perimetro(), p));
         addUp(1.0);

@@ -18,9 +18,6 @@ public class Elipse {
      * Atributos
      */
     private double ejeMayor, ejeMenor, perimetro, area;
-    //Obtenemos los radios para operarlos.
-    double ejeMayorRadio = ejeMayor/2;
-    double ejeMenorRadio = ejeMenor/2;
 
     /**
      * Constructor que crea un elipse con ambos ejes dados.
@@ -39,7 +36,15 @@ public class Elipse {
      * @return double Eje mayor de este elipse.
      */
     public double ejeMayor() {
+        if ( ejeMenor > ejeMayor) {
+            ejeMayor = ejeMenor; 
+        } 
         return ejeMayor;
+    }
+
+    public double semiEjeMayor(){
+        double semiEjeMayor = ejeMayor/2;
+        return semiEjeMayor;
     }
 
     /**
@@ -48,7 +53,15 @@ public class Elipse {
      * @return double Eje menor de este elipse.
      */
     public double ejeMenor() {
+        if ( ejeMenor > ejeMayor) {
+            ejeMenor = ejeMayor; 
+        } 
         return ejeMenor;
+    }
+
+    public double semiEjeMenor(){
+        double semiEjeMenor = ejeMenor/2;
+        return semiEjeMenor;
     }
 
     /**
@@ -57,7 +70,7 @@ public class Elipse {
      * @return double Perimetro de este elipse.
      */
     public double perimetro() {
-        perimetro = Math.PI * (ejeMayorRadio + ejeMenorRadio );
+        perimetro = Math.PI * semiEjeMayor() + semiEjeMenor();
         return perimetro;
     }
 
@@ -67,7 +80,7 @@ public class Elipse {
      * @return double Area de este elipse.
      */
     public double area() {
-        area = Math.PI * ejeMayorRadio * ejeMenorRadio;
+        area = Math.PI * semiEjeMayor() * semiEjeMenor(); 
         return area;
     }
 
@@ -78,6 +91,7 @@ public class Elipse {
      * @return boolean true Si el circulo dado encaja exactamente con este elipse.
      */
     public boolean encaja(Circulo c) {
+        return almostEquals(ejeMenor, c.diametro());
     }
 
     /**
@@ -87,6 +101,7 @@ public class Elipse {
      * @return boolean true Si el punto dado encaja exactamente con este elipse.
      */
     public boolean encaja(Punto p) {
+        return almostEquals(semiEjeMayor() , p.distance(p) );
     }
 
     /**
@@ -96,6 +111,12 @@ public class Elipse {
      * @return boolean true Si el punto dado se encuentra dentro de este elipse.
      */
     public boolean pertenece(Punto p) {
+        if ( p.distance(p) < semiEjeMayor()) {
+            return false;
+        } 
+        
+        return true;
+        
     }
 
 
@@ -117,7 +138,7 @@ public class Elipse {
         return 0 <= (d1 - d2) && (d1 - d2) <= 0.001;
     }
 
-    @Override
-    public String toString() {
-    }
+    // @Override
+    // public String toString() {
+    // }
 }
