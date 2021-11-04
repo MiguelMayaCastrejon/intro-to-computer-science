@@ -101,7 +101,12 @@ public class Elipse {
      * @return boolean true Si el punto dado encaja exactamente con este elipse.
      */
     public boolean encaja(Punto p) {
-        return almostEquals(semiEjeMayor() , p.distance(p) );
+        if (almostEquals(semiEjeMayor() , p.distance(p) )) {
+            return true;
+        } else if (!almostEquals(semiEjeMayor() , p.distance(p) )){
+            return false;
+        }
+        return false ;
     }
 
     /**
@@ -113,7 +118,9 @@ public class Elipse {
     public boolean pertenece(Punto p) {
         if ( p.distance(p) < semiEjeMayor()) {
             return false;
-        } 
+        } else if(!almostEquals(p.distance(p), semiEjeMayor())){
+            return false;
+        }
         
         return true;
         
