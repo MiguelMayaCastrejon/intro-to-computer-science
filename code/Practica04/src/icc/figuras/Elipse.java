@@ -36,6 +36,7 @@ public class Elipse {
      * @return double Eje mayor de este elipse.
      */
     public double ejeMayor() {
+        return ejeMayor;
     }
 
     /**
@@ -44,6 +45,7 @@ public class Elipse {
      * @return double Eje menor de este elipse.
      */
     public double ejeMenor() {
+        return ejeMenor;
     }
 
     /**
@@ -52,6 +54,13 @@ public class Elipse {
      * @return double Perimetro de este elipse.
      */
     public double perimetro() {
+        //Obtenemos los radios para operarlos.
+        double ejeMayorRadio = ejeMayor/2;
+        double ejeMenorRadio = ejeMenor/2;
+
+        //Hacemos los calculos.
+        double perimetro = Math.PI * (ejeMayorRadio + ejeMenorRadio );
+        return perimetro;
     }
 
     /**
