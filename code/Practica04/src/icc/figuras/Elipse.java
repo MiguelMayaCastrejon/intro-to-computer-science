@@ -26,8 +26,13 @@ public class Elipse {
      * @param ejeMenor Valor del eje menor.
      */
     public Elipse(double ejeMayor, double ejeMenor) {
-        this.ejeMayor = ejeMayor;
-        this.ejeMenor = ejeMenor;
+        if ( ejeMenor > ejeMayor) {
+            this.ejeMayor = ejeMenor; 
+            this.ejeMenor = ejeMayor; 
+        } else{
+            this.ejeMayor = ejeMayor;
+            this.ejeMenor = ejeMenor;
+        }
     }
 
     /**
@@ -36,15 +41,11 @@ public class Elipse {
      * @return double Eje mayor de este elipse.
      */
     public double ejeMayor() {
-        if ( ejeMenor > ejeMayor) {
-            ejeMayor = ejeMenor; 
-        } 
-        return ejeMayor;
+        return this.ejeMayor;
     }
 
     public double semiEjeMayor(){
-        double semiEjeMayor = ejeMayor/2;
-        return semiEjeMayor;
+        return ejeMayor/2;
     }
 
     /**
@@ -53,15 +54,12 @@ public class Elipse {
      * @return double Eje menor de este elipse.
      */
     public double ejeMenor() {
-        if ( ejeMenor > ejeMayor) {
-            ejeMenor = ejeMayor; 
-        } 
-        return ejeMenor;
+        
+        return this.ejeMenor;
     }
 
     public double semiEjeMenor(){
-        double semiEjeMenor = ejeMenor/2;
-        return semiEjeMenor;
+        return ejeMenor/2;
     }
 
     /**
@@ -70,7 +68,7 @@ public class Elipse {
      * @return double Perimetro de este elipse.
      */
     public double perimetro() {
-        perimetro = Math.PI * semiEjeMayor() + semiEjeMenor();
+        perimetro = Math.PI * (semiEjeMayor() + semiEjeMenor());
         return perimetro;
     }
 
@@ -100,14 +98,15 @@ public class Elipse {
      * @param p Punto con quien hacer la comparacion.
      * @return boolean true Si el punto dado encaja exactamente con este elipse.
      */
-    public boolean encaja(Punto p) {
-        if (almostEquals(semiEjeMayor() , p.distance(p) )) {
-            return true;
-        } else if (!almostEquals(semiEjeMayor() , p.distance(p) )){
-            return false;
-        }
-        return false ;
-    }
+    // public boolean encaja(Punto p) {
+    //     // if (almostEquals(semiEjeMayor() , p.distance(p) )) {
+    //     //     return true;
+    //     // } else 
+    //     // if (!almostEquals(semiEjeMayor() , p.distance(p) )){
+    //     //     return false;
+    //     // }
+    //     return false ;
+    // }
 
     /**
      * Metodo que revisa si el punto se encuentra estrictamente dentro este elipse.
@@ -115,16 +114,16 @@ public class Elipse {
      * @param p Punto con quien hacer la comparacion.
      * @return boolean true Si el punto dado se encuentra dentro de este elipse.
      */
-    public boolean pertenece(Punto p) {
-        if ( p.distance(p) < semiEjeMayor()) {
-            return false;
-        } else if(!almostEquals(p.distance(p), semiEjeMayor())){
-            return false;
-        }
+    // public boolean pertenece(Punto p) {
+    //     if ( p.distance(p) < semiEjeMayor()) {
+    //         return false;
+    //     } else if(!almostEquals(p.distance(p), semiEjeMayor())){
+    //         return false;
+    //     }
         
-        return true;
+    //     return true;
         
-    }
+    // }
 
 
     /**

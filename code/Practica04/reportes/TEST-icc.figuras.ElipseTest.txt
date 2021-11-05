@@ -1,24 +1,24 @@
 Testsuite: icc.figuras.ElipseTest
-Tests run: 12, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.119 sec
+Tests run: 12, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.127 sec
 ------------- Standard Output ---------------
 elipsePerfectTest:
 	Revisa que el circulo encaje perfectamente en un elipse.
 	[1.0/1.0]	Passed.
 elipsePointBelongMoreTest:
 	Revisa que puntos fuera del elipse no esten en el elipse.
-	[1.0/1.0]	Passed.
+	[0.0/1.0]
 elipseLessTest:
 	Revisa que el circulo mas chicos que el elipse no encajen en el elipse.
 	[1.0/1.0]	Passed.
 elipsePointBelongTest:
 	Revisa que puntos en el elipse no esten dentro del elipse.
-	[1.0/1.0]	Passed.
+	[0.0/1.0]
 elipseAreaTest:
 	Revisa que area del elipse encaje con el area esperada.
 	[1.0/1.0]	Passed.
 elipsePointLessTest:
 	Revisa que puntos dentro del elipse no encajen en el elipse.
-	[1.0/1.0]	Passed.
+	[0.0/1.0]
 elipseMayorTest:
 	Revisa que el eje mayor del elipse encaje con el que se envio como
 	parametro sin importar el orden.
@@ -39,39 +39,71 @@ elipsePointBelongLessTest:
 	[0.0/1.0]
 elipsePointMoreTest:
 	Revisa que puntos fuera del elipse no encajen en el elipse.
-	[1.0/1.0]	Passed.
+	[0.0/1.0]
 ===========================================================================
-  (Aciertos: 10.0/12.0)                   Puntaje: 83.33333333333334/100.0 
+  (Aciertos: 6.0/12.0)                                 Puntaje: 50.0/100.0 
 ===========================================================================
- Puntaje Total:                                    83.33333333333334/100.0 
+ Puntaje Total:                                                 50.0/100.0 
 ===========================================================================
 ------------- ---------------- ---------------
 
-Testcase: elipsePerfectTest took 0.032 sec
+Testcase: elipsePerfectTest took 0.035 sec
 Testcase: elipsePointBelongMoreTest took 0.002 sec
-Testcase: elipseLessTest took 0.01 sec
+	Caused an ERROR
+icc.figuras.Elipse.pertenece(Licc/puntos/Punto;)Z
+java.lang.NoSuchMethodError: icc.figuras.Elipse.pertenece(Licc/puntos/Punto;)Z
+	at icc.figuras.ElipseTest.elipsePointBelongMoreTest(ElipseTest.java:256)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+Testcase: elipseLessTest took 0.013 sec
 Testcase: elipsePointBelongTest took 0.001 sec
+	Caused an ERROR
+icc.figuras.Elipse.pertenece(Licc/puntos/Punto;)Z
+java.lang.NoSuchMethodError: icc.figuras.Elipse.pertenece(Licc/puntos/Punto;)Z
+	at icc.figuras.ElipseTest.elipsePointBelongTest(ElipseTest.java:204)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
 Testcase: elipseAreaTest took 0 sec
-Testcase: elipsePointLessTest took 0 sec
-Testcase: elipseMayorTest took 0.001 sec
-Testcase: elipsePointTest took 0.003 sec
-	FAILED
-null
-junit.framework.AssertionFailedError
+Testcase: elipsePointLessTest took 0.001 sec
+	Caused an ERROR
+icc.figuras.Elipse.encaja(Licc/puntos/Punto;)Z
+java.lang.NoSuchMethodError: icc.figuras.Elipse.encaja(Licc/puntos/Punto;)Z
+	at icc.figuras.ElipseTest.elipsePointLessTest(ElipseTest.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+Testcase: elipseMayorTest took 0 sec
+Testcase: elipsePointTest took 0 sec
+	Caused an ERROR
+icc.figuras.Elipse.encaja(Licc/puntos/Punto;)Z
+java.lang.NoSuchMethodError: icc.figuras.Elipse.encaja(Licc/puntos/Punto;)Z
 	at icc.figuras.ElipseTest.elipsePointTest(ElipseTest.java:126)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 
-Testcase: elipseMoreTest took 0.009 sec
+Testcase: elipseMoreTest took 0.011 sec
 Testcase: elipseMenorTest took 0 sec
 Testcase: elipsePointBelongLessTest took 0.001 sec
-	FAILED
-null
-junit.framework.AssertionFailedError
+	Caused an ERROR
+icc.figuras.Elipse.pertenece(Licc/puntos/Punto;)Z
+java.lang.NoSuchMethodError: icc.figuras.Elipse.pertenece(Licc/puntos/Punto;)Z
 	at icc.figuras.ElipseTest.elipsePointBelongLessTest(ElipseTest.java:230)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 
 Testcase: elipsePointMoreTest took 0 sec
+	Caused an ERROR
+icc.figuras.Elipse.encaja(Licc/puntos/Punto;)Z
+java.lang.NoSuchMethodError: icc.figuras.Elipse.encaja(Licc/puntos/Punto;)Z
+	at icc.figuras.ElipseTest.elipsePointMoreTest(ElipseTest.java:178)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
