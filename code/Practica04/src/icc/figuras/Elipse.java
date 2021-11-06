@@ -68,7 +68,9 @@ public class Elipse {
      * @return double Perimetro de este elipse.
      */
     public double perimetro() {
-        perimetro = Math.PI * (semiEjeMayor() + semiEjeMenor());
+        perimetro = Math.PI * (3*(semiEjeMayor()+semiEjeMenor()) -
+        Math.sqrt((3*semiEjeMayor()+semiEjeMenor())*(semiEjeMayor()+3*semiEjeMenor())));
+        
         return perimetro;
     }
 

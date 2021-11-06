@@ -16,6 +16,7 @@ public class Prueba {
         System.out.println("Este es el eje menor: " +  e.ejeMenor());
         System.out.println("Este es el semi eje mayor: " +  e.semiEjeMayor());
         System.out.println("Este es el semi eje menor: "+ e.semiEjeMenor());
+        System.out.println("Este es el perimetro de la elipse: " +e.perimetro());
     }
 
 }
