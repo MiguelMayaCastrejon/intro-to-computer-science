@@ -186,8 +186,8 @@ public class Punto {
     /**
      * Metodo que revisa si el punto actual pertenece a la circunferencia definida por los puntos diametro pasados como parametro.
      *
-     * @param p1 Primer punto del diamtro del circulo.
-     * @param p2 Segundo punto del diamtro del circulo.
+     * @param p1 Primer punto del diametro del circulo.
+     * @param p2 Segundo punto del diametro del circulo.
      *
      * @return boolean - true si el punto actual se encuentra dentro de la circunferencia dada.
      */

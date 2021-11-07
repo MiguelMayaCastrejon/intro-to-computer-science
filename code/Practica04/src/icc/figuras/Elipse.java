@@ -4,6 +4,8 @@ package icc.figuras;
 
 import java.text.DecimalFormat;
 
+import javax.swing.FocusManager;
+
 import icc.colors.Colors;
 import icc.puntos.Punto;
 
@@ -96,19 +98,40 @@ public class Elipse {
 
     /**
      * Metodo que revisa si el punto dado encaja exactamente con este elipse.
+     * Usamo la ecuación canonica de la elipse.
+     * x^2/a^2 + y^2/b^2 = 1 , es la que tiene el eje mayor paralelo al eje x, ademas centro (0,0)
      *
      * @param p Punto con quien hacer la comparacion.
      * @return boolean true Si el punto dado encaja exactamente con este elipse.
      */
-    // public boolean encaja(Punto p) {
-    //     // if (almostEquals(semiEjeMayor() , p.distance(p) )) {
-    //     //     return true;
-    //     // } else 
-    //     // if (!almostEquals(semiEjeMayor() , p.distance(p) )){
-    //     //     return false;
-    //     // }
-    //     return false ;
-    // }
+
+    public boolean encaja(Punto p) {
+        double formulaElipse = Math.pow(p.getX(), 2)/ Math.pow(semiEjeMayor(), 2) + Math.pow(p.getY(), 2)/ Math.pow(semiEjeMenor(), 2);
+        formulaElipse = Math.abs(formulaElipse);
+        return almostEquals(formulaElipse, 1);
+    }
+
+    /**
+     * Metodo que calcula los focos usando el teorma de pitagoras para usarse en encaja(Punto p)
+     * c^2 = a^2 - b^2
+     * @return focos cacula los focos
+     */
+    public double focos(){
+        double focos;
+        focos = Math.sqrt( Math.pow(semiEjeMayor(), 2) - Math.pow(semiEjeMenor(), 2) );
+        return focos;
+    }
+
+    /**
+     * Metodo que calcula la distancia de ambos focos a el borde de la elipse.
+     * @return distanciaFocalTotal la distancia total de la suma de ambos focos a un punto.
+     */
+    public double distanciaFocalTotal(){
+        double distanciaFocalLadoX = semiEjeMayor() - focos();
+        double distanciaFocalLadoY = focos()+focos() + distanciaFocalLadoX;
+        double distanciaFocalTotal = distanciaFocalLadoX + distanciaFocalLadoY;
+        return distanciaFocalTotal;
+    }
 
     /**
      * Metodo que revisa si el punto se encuentra estrictamente dentro este elipse.
@@ -116,16 +139,15 @@ public class Elipse {
      * @param p Punto con quien hacer la comparacion.
      * @return boolean true Si el punto dado se encuentra dentro de este elipse.
      */
-    // public boolean pertenece(Punto p) {
-    //     if ( p.distance(p) < semiEjeMayor()) {
-    //         return false;
-    //     } else if(!almostEquals(p.distance(p), semiEjeMayor())){
-    //         return false;
-    //     }
-        
-    //     return true;
-        
-    // }
+    public boolean pertenece(Punto p) {
+        double formulaElipse = Math.pow(p.getX(), 2)/ Math.pow(semiEjeMayor(), 2) + Math.pow(p.getY(), 2)/ Math.pow(semiEjeMenor(), 2);
+        if (almostEquals(formulaElipse, 1)) {
+            return false;
+        } else if (formulaElipse < 1 ){
+            return true;
+        }
+        return false;
+    }
 
 
     /**
@@ -143,10 +165,11 @@ public class Elipse {
             d1 = d1 - d2;   // d1 = 7
         }
 
-        return 0 <= (d1 - d2) && (d1 - d2) <= 0.001;
+        return 0 <= (d1 - d2) && (d1 - d2) <= 0.00001;
     }
 
     // @Override
     // public String toString() {
+         
     // }
 }
