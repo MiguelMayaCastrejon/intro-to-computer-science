@@ -170,6 +170,6 @@ public class Elipse {
 
     // @Override
     // public String toString() {
-         
+        
     // }
 }
